@@ -23,7 +23,7 @@ document.querySelectorAll('#lt [data-k]').forEach(b=>{const label=document.creat
 
 /* Preserve the engine's DOM contract while moving results into their own panel. */
 const oldTicket=document.createElement('div');oldTicket.className='legacy-ticket';
-const performance=$('#st'),tradeList=$('#tl'),exportButton=$('#csv'),position=$('#pos'),closeButton=$('#cls'),orderList=$('#ord'),boxOrder=$('#boxo');
+const performancePanel=$('#st'),tradeList=$('#tl'),exportButton=$('#csv'),position=$('#pos'),closeButton=$('#cls'),orderList=$('#ord'),boxOrder=$('#boxo');
 while($('#rt').firstChild)oldTicket.append($('#rt').firstChild);document.body.append(oldTicket);
 $('#rt').innerHTML=`<div class="ticket-head">MNQ <span>Order ticket · $2 / point</span></div><div class="ticket-body">
  <div class="side-switch" role="group" aria-label="Order direction"><button data-side="-1">Sell / Short<b id="sell-quote">—</b></button><button data-side="1" class="active">Buy / Long<b id="buy-quote">—</b></button></div>
@@ -37,9 +37,9 @@ $('#rt').innerHTML=`<div class="ticket-head">MNQ <span>Order ticket · $2 / poin
  <p class="ticket-help" id="ticket-help">Add a limit to place entry, stop, and target lines on the chart. Drag their handles to fine-tune your setup.</p><div id="box-order-slot"></div>
  </div><div class="ticket-position"><h3>OPEN POSITION</h3><div id="position-slot"></div></div><div class="ticket-position"><h3>PENDING ORDERS</h3><div id="pending-slot"></div></div>`;
 $('#position-slot').append(position,closeButton);$('#pending-slot').append(orderList);$('#box-order-slot').append(boxOrder);boxOrder.textContent='Use selected position box';
-const history=document.createElement('section');history.id='history';history.setAttribute('aria-label','Trading activity');history.innerHTML='<div class="history-tabs"><button data-pane="trades" class="active">Trade history</button><button data-pane="performance">Performance</button></div><div class="history-pane" data-view="trades"></div><div class="history-pane" data-view="performance" hidden></div>';
-$('#app').append(history);history.querySelector('.history-tabs').append(exportButton);history.querySelector('[data-view="trades"]').append(tradeList);history.querySelector('[data-view="performance"]').append(performance);exportButton.textContent='Copy CSV ↗';
-history.querySelectorAll('[data-pane]').forEach(b=>b.onclick=()=>{history.querySelectorAll('[data-pane]').forEach(x=>x.classList.toggle('active',x===b));history.querySelectorAll('[data-view]').forEach(x=>x.hidden=x.dataset.view!==b.dataset.pane)});
+const activityPanel=document.createElement('section');activityPanel.id='history';activityPanel.setAttribute('aria-label','Trading activity');activityPanel.innerHTML='<div class="history-tabs"><button data-pane="trades" class="active">Trade history</button><button data-pane="performance">Performance</button></div><div class="history-pane" data-view="trades"></div><div class="history-pane" data-view="performance" hidden></div>';
+$('#app').append(activityPanel);activityPanel.querySelector('.history-tabs').append(exportButton);activityPanel.querySelector('[data-view="trades"]').append(tradeList);activityPanel.querySelector('[data-view="performance"]').append(performancePanel);exportButton.textContent='Copy CSV ↗';
+activityPanel.querySelectorAll('[data-pane]').forEach(b=>b.onclick=()=>{activityPanel.querySelectorAll('[data-pane]').forEach(x=>x.classList.toggle('active',x===b));activityPanel.querySelectorAll('[data-view]').forEach(x=>x.hidden=x.dataset.view!==b.dataset.pane)});
 
 /* Draft order state is separate from submitted orders. It cannot fill during replay. */
 let direction=1,orderMode='lim',draft=null,levelDrag=null;
