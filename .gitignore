@@ -1,0 +1,8 @@
+.dev-tools/
+node_modules/
+dist/
+MicroBack.zip
+MicroBack-source.zip
+.source-package/
+.env
+.env.*

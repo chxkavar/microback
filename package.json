@@ -1,0 +1,15 @@
+{
+  "name": "microback",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.cjs",
+    "test": "node verify.cjs && node verify-cloud.cjs && node verify-db.cjs",
+    "test:live": "node verify-live.cjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.15",
+    "@supabase/supabase-js": "2.119.0",
+    "jsdom": "29.1.1"
+  }
+}
