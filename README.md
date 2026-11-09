@@ -43,6 +43,8 @@ For a limit setup:
 4. Drag the entry, stop, and target handles, or enter exact prices in the ticket.
 5. Select **Place buy limit** or **Place sell limit** to submit the order.
 
+Click the contract-count badge on a draft or pending entry line to change quantity. The editor provides a whole-contract input, plus/minus controls, and presets from 1 to 1,000. Apply updates the order and ticket together. Filled quantities stay fixed.
+
 Draft orders cannot fill. Once submitted, a pending order's levels remain draggable. Moving its entry preserves the stop and target distances. Buy limits must stay below the current price; sell limits must stay above it.
 
 After a fill, the executed entry price stays fixed. You can continue dragging the live stop and target to adjust the open trade. Dragging a level pauses replay, and the changes apply to subsequent replay bars.
@@ -62,7 +64,7 @@ You can also select a long or short position drawing and choose **Use selected p
 | Edit a drawing | Select it with Crosshair, then drag its body or handles. |
 | Finish a path | Double-click or press **Enter**. Press **Escape** to cancel an unfinished path. |
 
-Expand the left toolbar to see tool names. Long and short position drawings show their measurements on hover.
+Expand the left toolbar to see tool names. Long and short position drawings always show risk/reward at the entry line; detailed measurements appear on hover. Use the toolbar Undo/Redo buttons, Ctrl/Cmd+Z, Ctrl/Cmd+Shift+Z, or Ctrl+Y to reverse drawing creation, reshaping, movement, and deletion. Drawing history resets when a session is loaded.
 
 The chart displays candles without a volume histogram. Imported volume remains available to VWAP and the data-details panel.
 
@@ -123,6 +125,7 @@ MicroBack uses plain HTML, CSS, and JavaScript, [TradingView Lightweight Charts]
 |---|---|
 | `index.html` | Application shell, chart setup, and replay engine |
 | `microback.js` / `microback.css` | Chart interaction, drawing tools, and workspace layout |
+| `workspace-tools.js` / `workspace-tools.css` | Drawing undo/redo and on-chart order quantity controls |
 | `accounts.js` / `accounts.css` | Sign-in, profiles, and session-library interface |
 | `cloud-store.js` | Cloud session and dataset operations |
 | `session-state.js` | Capture and restoration of replay state |
@@ -154,3 +157,4 @@ MicroBack is a practice simulator with a defined execution model:
 ## Feedback
 
 Found a bug or have an idea? [Open an issue](https://github.com/chxkavar/microback/issues) with the steps to reproduce it, your browser version, and the data format involved.
+

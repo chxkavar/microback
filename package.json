@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "node build.cjs",
-    "test": "node verify.cjs && node verify-cloud.cjs && node verify-db.cjs",
+    "test": "node verify.cjs && node verify-cloud.cjs && node verify-session-store.cjs && node verify-db.cjs",
     "test:live": "node verify-live.cjs"
   },
   "devDependencies": {

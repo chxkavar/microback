@@ -6,6 +6,6 @@ fs.writeFileSync(path.join(root,'imports','files.json'),JSON.stringify(fs.readdi
 // dist is generated output; verify its location before replacing it.
 if(path.dirname(out)!==root||path.basename(out)!=='dist')throw new Error('Invalid output directory');
 fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});
-const assets=['index.html','microback.css','microback.js','accounts.css','accounts.js','cloud-config.js','cloud-store.js','session-state.js','imports','vendor'];
+const assets=['index.html','microback.css','microback.js','workspace-tools.js','workspace-tools.css','accounts.css','accounts.js','cloud-config.js','cloud-store.js','session-state.js','imports','vendor'];
 for(const asset of assets)fs.cpSync(path.join(root,asset),path.join(out,asset),{recursive:true});
 console.log('MicroBack built into dist/');
