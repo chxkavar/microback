@@ -3,6 +3,12 @@ node_modules/
 dist/
 MicroBack.zip
 MicroBack-source.zip
+MicroBack-saving-fix.zip
+MicroBack-session-controls.zip
 .source-package/
 .env
 .env.*
+
+# Local recovery copies are never published.
+backups/
+.release/

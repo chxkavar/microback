@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "build": "node build.cjs",
-    "test": "node verify.cjs && node verify-cloud.cjs && node verify-session-store.cjs && node verify-db.cjs",
+    "test": "node verify.cjs && node verify-cloud.cjs && node verify-session-store.cjs && node verify-db.cjs && npm run test:calibr",
+    "test:calibr": "node calibr/verify.cjs && node calibr/verify-library.cjs && node calibr/verify-library-ui.cjs && node calibr/verify-practice.cjs && node calibr/verify-app.cjs && node calibr/verify-analytics.cjs && node calibr/verify-cloud-backend.cjs && node calibr/verify-cloud-client.cjs && node calibr/verify-landing.cjs",
+    "test:build": "node build.cjs && node verify-build.cjs",
+    "preview:release": "node calibr/serve-build.cjs",
     "test:live": "node verify-live.cjs"
   },
   "devDependencies": {

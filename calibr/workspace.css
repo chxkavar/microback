@@ -1,0 +1,30 @@
+/* Workspace refinements for the local Calibr preview. */
+#app{--activity-height:clamp(180px,28vh,240px);min-height:0;grid-template-rows:48px minmax(160px,1fr) 44px var(--activity-height)}
+#app.activity-collapsed{--activity-height:36px}
+#history{min-height:0}
+.history-tabs{height:36px;min-height:36px;gap:20px}
+.history-tabs [role="tab"]{height:36px;white-space:nowrap}
+.history-tabs #activity-toggle{margin-left:auto;padding:6px 8px;border-radius:4px;border:1px solid transparent;display:flex;align-items:center;justify-content:center;color:#9a8ca8}
+.history-tabs #activity-toggle:hover{background:#292130;border-color:#42334e;color:#d1b8ec}
+#activity-toggle svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.history-tabs button:focus-visible{outline:2px solid #ac8bdb;outline-offset:-3px}
+.history-pane{flex:1;min-height:0;padding:15px 16px;overflow:auto}
+.performance-account{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.performance-account>div{background:#1b1720;border:1px solid #302738;border-radius:6px;padding:12px 13px;min-width:0}
+.performance-account span{display:block;color:#9785a4;font-size:10px;margin-bottom:9px}
+.performance-account b{font-size:16px;font-weight:550;color:#e7deee;white-space:nowrap;font-variant-numeric:tabular-nums}
+.performance-account b.up{color:#5dc4a2}.performance-account b.dn{color:#ee7e86}
+#st{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+#st>div{background:#17151b;border-color:#2d2634;padding:11px 13px;border-radius:6px}
+#st span{font-size:9px;color:#8c8097;margin-bottom:8px}#st b{font-size:15px}
+#lt,#rt,.history-pane{scrollbar-width:thin;scrollbar-color:#49424f transparent}
+#lt::-webkit-scrollbar,#rt::-webkit-scrollbar,.history-pane::-webkit-scrollbar{width:5px;height:5px}
+#lt::-webkit-scrollbar-track,#rt::-webkit-scrollbar-track,.history-pane::-webkit-scrollbar-track{background:transparent}
+#lt::-webkit-scrollbar-thumb,#rt::-webkit-scrollbar-thumb,.history-pane::-webkit-scrollbar-thumb{background:#49424f;border-radius:8px}
+#lt::-webkit-scrollbar-thumb:hover,#rt::-webkit-scrollbar-thumb:hover,.history-pane::-webkit-scrollbar-thumb:hover{background:#75627e}
+#lt::-webkit-scrollbar-button,#rt::-webkit-scrollbar-button,.history-pane::-webkit-scrollbar-button{display:none;width:0;height:0}
+@media(max-width:1050px){.performance-account{gap:7px}.performance-account>div{padding:11px 9px}.performance-account span{font-size:9px}.performance-account b{font-size:13px}}
+@media(max-width:820px){#app,#app.nr{height:auto;min-height:100dvh;grid-template-rows:48px minmax(280px,56vh) 44px var(--activity-height) auto}#app.activity-collapsed{grid-template-rows:48px minmax(280px,calc(56vh + 144px)) 44px 36px auto}.performance-account{grid-template-columns:repeat(3,minmax(0,1fr))}#st{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:440px){.history-pane{padding:12px 10px}.performance-account{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.performance-account b{font-size:12px}.performance-account span{font-size:8px}.history-tabs{gap:15px}.history-tabs [role="tab"]{font-size:10px}}
+
+.session-readonly #chart-levels{pointer-events:none}.session-readonly #rt,.session-readonly #lt{opacity:.55}.session-readonly #cw{cursor:grab}
