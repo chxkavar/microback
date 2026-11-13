@@ -121,3 +121,13 @@ The backtesting iframe, engine, workspace stylesheet and chart settings were not
 New CSV uploads are retained in account/profile/dataset-scoped IndexedDB. Cloud writes contain file identity and session state, with no uploaded candle bodies. SHA-256 matching reattachment is required when local data is missing. New uploads skip the reusable-library/publication flow. Existing cloud datasets remain supported.
 
 All 238 automated checks pass, including local-only cloud payloads, missing cache recovery, mismatched-file rejection, original-file restoration, session-start retries, ownership and revision guards. The static build resolves all 44 local references. A real 180,494-candle NAS100 upload opened successfully in the local signed-in preview; cloud SQL confirmed a 662-byte dataset descriptor, no candle asset, and a saved replay index of 3.
+
+## Stop-entry orders — 13 November 2026
+
+Buy-stop and sell-stop entries use the existing draggable entry/stop-loss/target and quantity controls. Stop triggers are tested against candle highs/lows; gaps execute at the opening price. Drafts never fill. Pending levels stay on their correct trigger side when dragged, and old untyped saved orders remain limits. Stop order types, ticket selection and fractional quantities survive snapshot restoration. Eleven additional regression checks cover these behaviours. OHLC intrabar ambiguity retains the existing conservative stop-loss-first rules.
+
+## On-chart monetary sizing — 13 November 2026
+
+Selected long/short drawings show potential cash profit/loss, account-balance percentages and quantity alongside R:R. Draft, pending and live exit handles use their own quantity and dataset point value. The quantity editor previews both outcomes before Apply, without modifying the pending order during preview. Fractional quantities are supported and synchronize position-box tooltips. Account percentages use the actual session starting balance plus realised results.
+
+Three additional generic-engine tests cover currency/multiplier/fractional sizing, preview-before-apply, independent pending quantities and a profitable live stop. Browser verification confirmed a pending buy stop survives refresh, and sizing from one to five contracts changes the preview and chart from -$40 / +$80 to -$200 / +$400.

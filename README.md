@@ -14,11 +14,13 @@ Early access uses an email address and a Calibr password. Email ownership is not
 |---|---|
 | Named sessions with a configurable starting balance | Session and overall dashboards |
 | Uploaded or saved datasets with remembered calculation settings | P&L, balance growth, win rate and drawdown |
-| Market and limit orders with on-chart quantity and exit controls | Historical day, week and month drilldowns |
+| Market, limit and stop-entry orders with on-chart quantity and exit controls | Historical day, week and month drilldowns |
 | One to three synced replay charts and independent timeframes | Private trades and reports for each profile |
 | Pan, zoom, drawings, EMA and VWAP | Cloud save/resume and practice-time tracking |
 
 For this phase, uploaded CSV candles stay in browser storage. Only session details, file identity and trading progress save to your cloud account. Resume on the same browser uses the retained candles; if they are missing (including on another device), select the exact original CSV again. Calibr verifies its fingerprint before restoring the session. Keep your original files. New uploads do not enter the dataset library; existing saved datasets remain usable.
+
+Size trades visually: selected position boxes and chart exit handles show potential profit and loss in account currency and as a percentage of current balance. The on-chart quantity editor previews these amounts before applying a size. Stop entries trigger above price for buys and below price for sells; gaps fill at the opening price.
 
 Completed sessions are read-only until reactivated. Reset starts the same session fresh. Rewind removes later trading activity and recalculates the balance.
 
