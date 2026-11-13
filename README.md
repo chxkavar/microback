@@ -18,7 +18,7 @@ Early access uses an email address and a Calibr password. Email ownership is not
 | One to three synced replay charts and independent timeframes | Private trades and reports for each profile |
 | Pan, zoom, drawings, EMA and VWAP | Cloud save/resume and practice-time tracking |
 
-Organize datasets in private folders or request administrator approval to publish a separate dataset copy. Publishing data never publishes your sessions, trades or reports.
+For this phase, uploaded CSV candles stay in browser storage. Only session details, file identity and trading progress save to your cloud account. Resume on the same browser uses the retained candles; if they are missing (including on another device), select the exact original CSV again. Calibr verifies its fingerprint before restoring the session. Keep your original files. New uploads do not enter the dataset library; existing saved datasets remain usable.
 
 Completed sessions are read-only until reactivated. Reset starts the same session fresh. Rewind removes later trading activity and recalculates the balance.
 

@@ -115,3 +115,9 @@ The landing follows the latest black/emerald reference with a centered headline,
 Applied the landing palette to sign-in, profiles, Sessions, Dashboard, Reports, Datasets and dataset approval screens. Shared tokens in theme.css define black surfaces, warm neutral text, peach accents, selected states, inputs and focus rings. Legacy component literals were recoloured to match; profit/loss and approval status colours retain their semantic meaning. Report curves use peach tones. The wordmark is text-only throughout the account app.
 
 The backtesting iframe, engine, workspace stylesheet and chart settings were not changed. Its parent shell explicitly retains black surfaces. Verified the signed-out sign-in presentation in a separate localhost origin without signing out the user's existing account. Relevant lifecycle, dataset UI, analytics and landing checks all passed (32 checks). No Git push or Netlify deployment was performed.
+
+## Browser-local CSVs, cloud progress — 13 November 2026
+
+New CSV uploads are retained in account/profile/dataset-scoped IndexedDB. Cloud writes contain file identity and session state, with no uploaded candle bodies. SHA-256 matching reattachment is required when local data is missing. New uploads skip the reusable-library/publication flow. Existing cloud datasets remain supported.
+
+All 238 automated checks pass, including local-only cloud payloads, missing cache recovery, mismatched-file rejection, original-file restoration, session-start retries, ownership and revision guards. The static build resolves all 44 local references. A real 180,494-candle NAS100 upload opened successfully in the local signed-in preview; cloud SQL confirmed a 662-byte dataset descriptor, no candle asset, and a saved replay index of 3.

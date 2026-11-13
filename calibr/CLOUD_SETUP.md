@@ -37,6 +37,7 @@ Before enabling Google or restoring email confirmation later, review account-lin
 ## Schema and verification
 
 - `cloud-schema.sql`: isolated records/assets, RLS, guarded commits and publication decisions.
+- `cloud-local-datasets.sql`: apply after the two base scripts; permits private session-only dataset identity without a cloud candle asset. New CSV bodies are retained in `calibr-local-candles` IndexedDB, scoped by account, profile and dataset. Missing files require SHA-256 matching reattachment.
 - `cloud-hardening.sql`: explicit membership read denial and administrator-only public folder management.
 - Both scripts were tested on isolated Postgres before being applied through the Supabase connector. The applied migrations are named `calibr_accounts_cloud_records_and_approvals` and `calibr_verified_public_folder_management`.
 - Database checks exercise two account identities, direct-write denial, private asset access, forged approvals, immutable public snapshots, stale saves and Completed-session restrictions.

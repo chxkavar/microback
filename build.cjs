@@ -5,7 +5,7 @@ const {workspaceHTML,workspaceScript}=require('./calibr/server.cjs');
 const root=__dirname,out=path.join(root,'dist');
 const runtime=[
  'index.html','model.js','practice.js','store.js','library.js','library-ui.js',
- 'analytics.js','reports-ui.js','cloud.js','landing.js','app.js','engine.js','workspace.js',
+ 'analytics.js','reports-ui.js','local-candles.js','cloud.js','landing.js','app.js','engine.js','workspace.js',
  'styles.css','library.css','reports.css','landing.css','theme.css','workspace.css','charts.css','mark.svg'
 ];
 // dist is generated output. Verify the absolute target before replacing it.
