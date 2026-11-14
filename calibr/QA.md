@@ -131,3 +131,7 @@ Buy-stop and sell-stop entries use the existing draggable entry/stop-loss/target
 Selected long/short drawings show potential cash profit/loss, account-balance percentages and quantity alongside R:R. Draft, pending and live exit handles use their own quantity and dataset point value. The quantity editor previews both outcomes before Apply, without modifying the pending order during preview. Fractional quantities are supported and synchronize position-box tooltips. Account percentages use the actual session starting balance plus realised results.
 
 Three additional generic-engine tests cover currency/multiplier/fractional sizing, preview-before-apply, independent pending quantities and a profitable live stop. Browser verification confirmed a pending buy stop survives refresh, and sizing from one to five contracts changes the preview and chart from -$40 / +$80 to -$200 / +$400.
+
+## Empty-chart deselection — 14 November 2026
+
+Empty-space primary clicks clear drawing selection after pointer release. Movement beyond three pixels retains selection and pans; simple clicks retain auto-fitting. Cancel, blur and middle-button gestures do not deselect. Pointer-event regression checks cover trend, ray, horizontal/vertical lines, parallel channel, rectangle, Fibonacci, measure, long/short boxes and paths; drawings remain intact and selectable. All 87 core integration checks pass.
