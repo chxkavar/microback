@@ -5,7 +5,7 @@ window.CalibrApp=(()=>{
  const state={account:null,profile:null,active:null,dataset:null,upload:null,route:'landing',filter:'all',search:'',view:'sessions',saving:null,lastSaved:'',saveTimer:null,busy:false,timezone:'Asia/Kolkata'};
  const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const icon=(name,size=18)=>{const paths={arrow:'M5 12h14m-5-5 5 5-5 5',plus:'M12 5v14M5 12h14',grid:'M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z',folder:'M3 7h7l2 2h9v11H3zM3 7V4h7l2 3',chart:'M3 3v18h18M6 15l4-5 4 3 6-8',chevron:'m9 5 7 7-7 7',upload:'M12 16V3m-5 5 5-5 5 5M4 15v6h16v-6',back:'M19 12H5m5-5-5 5 5 5',check:'m5 12 4 4L20 5',clock:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18m0 4v5l3 2',play:'m8 4 12 8-12 8z',file:'M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6',exit:'M9 4H4v16h5m5-12 4 4-4 4M8 12h12'};return`<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name]?`<path d="${paths[name]}"/>`:''}</svg>`};
- const logo=()=>'<a class="brand" href="#" data-action="landing">calibr<span class="brand-period">.</span></a>';
+ const logo=()=>'<a class="brand" href="#" data-action="landing" aria-label="Calibr home"><img src="/calibr/brand-mark.png" width="48" height="48" alt="Calibr"></a>';
  const localBuild=['127.0.0.1','localhost','[::1]'].includes(location.hostname);
  const localNote=localBuild?'<span class="local-tag"><i></i> Local build</span>':'';
  const currency=()=>state.active?.datasetSettings?.currency||state.dataset?.settings?.currency||'USD';

@@ -9,3 +9,6 @@ input,textarea,select{background:#0e0d0c;border-color:#3b3029;color:#f0e9e3;acce
 /* Preserve the backtesting shell and chart as black surfaces. */
 .workspace-shell{--bg:#0b0c0e;--panel:#131315;--line:#2c2931;background:#0b0c0e;color:#eeeff3}.workspace-top{background:#101113;border-color:#28282d}.workspace-loading{background:#0b0c0e}.workspace-shell iframe{background:#0b0c0e}
 @media(max-width:600px){.sidebar>.brand{font-size:0}.sidebar>.brand:before{content:'c';font-size:28px;line-height:32px;font-weight:750;color:var(--accent)}.workspace-top .brand:before{content:'c';font-size:22px;color:var(--accent)}}
+
+/* Supplied Calibr mark across public, account and workspace pages. */
+.brand img,.calibr-nav .brand img{display:block;width:48px;height:48px;object-fit:contain;border-radius:0}.sidebar>.brand img{width:46px;height:46px}.workspace-top .brand img{width:34px;height:34px}.sidebar>.brand:before,.workspace-top .brand:before{content:none!important}@media(max-width:600px){.sidebar>.brand img{width:32px;height:32px}.workspace-top .brand img{width:28px;height:28px}}

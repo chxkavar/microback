@@ -6,7 +6,7 @@ const root=__dirname,out=path.join(root,'dist');
 const runtime=[
  'index.html','model.js','practice.js','store.js','library.js','library-ui.js',
  'analytics.js','reports-ui.js','local-candles.js','cloud.js','landing.js','app.js','engine.js','workspace.js',
- 'styles.css','library.css','reports.css','landing.css','theme.css','workspace.css','charts.css','mark.svg'
+ 'styles.css','library.css','reports.css','landing.css','theme.css','workspace.css','charts.css','mark.svg','brand-mark.png','favicon-32.png','apple-touch-icon.png','app-icon-192.png','app-icon-512.png','app-icon-maskable.png','favicon.ico','app.webmanifest'
 ];
 // dist is generated output. Verify the absolute target before replacing it.
 if(path.resolve(out)!==path.join(path.resolve(root),'dist'))throw Error('Invalid output directory');
@@ -14,6 +14,7 @@ fs.rmSync(out,{recursive:true,force:true});
 fs.mkdirSync(path.join(out,'calibr'),{recursive:true});
 for(const file of runtime)fs.copyFileSync(path.join(root,'calibr',file),path.join(out,'calibr',file));
 fs.copyFileSync(path.join(root,'calibr/index.html'),path.join(out,'index.html'));
+fs.copyFileSync(path.join(root,'calibr/favicon.ico'),path.join(out,'favicon.ico'));
 fs.writeFileSync(path.join(out,'workspace.html'),workspaceHTML());
 for(const file of ['microback.js','workspace-tools.js','session-state.js'])fs.writeFileSync(path.join(out,file),workspaceScript(file));
 for(const file of ['microback.css','workspace-tools.css'])fs.copyFileSync(path.join(root,file),path.join(out,file));
